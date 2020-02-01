@@ -1,5 +1,8 @@
 Using Math.pow
-var items = new Array();
+
+function init(){
+	document.getElementById("add_row").addEventListener("click", addRow, true);
+}
 
 class Item {
  	constructor(name, amt, time) {
@@ -44,8 +47,15 @@ function displayItems(){
 
 }
 
-function addRow(){
+function addItem(){
 
+}
+
+function addRow(){
+	var items = document.getElementById("items")
+	var row = items.insertRow();
+	row.classList.add("rows");
+	items.appendChild(row);
 }
 
 function delItem(){
