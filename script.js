@@ -1,4 +1,5 @@
 Using Math.pow
+var items = new Array();
 
 class Item {
  	constructor(name, amt, time) {
@@ -7,35 +8,29 @@ class Item {
 		this.time = time;
 
 		switch(name) {
-			case cola:
-				this.caf = 9.7
+			case soda:
+				this.caf = 40
 				break;
 			case green_tea:
-				this.caf = 12.1
+				this.caf = 28
 				break;
 			case milk_chocolate:
-				this.caf = 20
+				this.caf = 6
 				break;
 			case black_tea:
-				this.caf = 22.5
+				this.caf = 47
 				break;
 			case energy_drink:
-				this.caf = 32
+				this.caf = 200
 				break;
 			case dark_chocolate:
-				this.caf = 59
+				this.caf = 23
 				break;
-			case black_coffee:
-				this.caf = 74.7
-				break;
-			case white_coffee:
-				this.caf = 86.9
-				break;
-			case capuccino:
-				this.caf = 101.9
+			case regular_coffee:
+				this.caf = 96
 				break;
 			case espresso:
-				this.caf = 194
+				this.caf = 40
 				break;
 			case custom:
 				this.caf = amt;
@@ -43,6 +38,18 @@ class Item {
 
 		this.mgCaf = amt * this.caf
   	}
+}
+
+function displayItems(){
+
+}
+
+function addRow(){
+
+}
+
+function delItem(){
+
 }
 
 function calc(weight, items, now){

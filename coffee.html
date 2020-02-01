@@ -6,27 +6,37 @@
     <link rel="script" type="text/javascript" href="script.js">
 </head>
 <body>
+    <p id=intro>While normalized in society today, caffeine still remains a drug, and like any drug, may come with some serious side effects. This module helps you track your caffeine intake so you can figure out the optimal amount to consume without experiencing the adverse side effects of too much caffeine, such as jitteriness and anxiety.<br>
+    <br>
+    For amount, enter how much of the appropriate unit you consumed at that time for that item:<br>
+    Caffeinated Soda: 12oz<br>
+    Tea, Coffee: 8oz<br>
+    Energy Drink: 16oz<br>
+    Espresso: 1 shot<br>
+    Chocolate: 1oz<br>
+    <br>
+    For espresso based drinks (lattes, capuccinos, etc.), enter 2 shots of espresso for a small, 3 for a large<br>
+    <br>
+    Alternatively, if your caffeinated consumable is not listed as an option, but you know the amount of caffeine you consumed from it in mg, you can add it as a custom item.</p>
     <form> 
-        Weight: <br>
+        Weight (in lbs): <br>
         <input type="number" name = "weight"><br>
         <table id="items">Items:<br>
             <select>Item
                 <option value="empty"></option>
-                <option value="cola">Cola</option>
+                <option value="soda">Caffeinated Soda</option>
                 <option value="green_tea">Green Tea</option>
                 <option value="milk_chocolate">Milk Chocolate</option>
                 <option value="black_tea">Black Tea</option>
                 <option value="energy_drink">Energy Drink</option>
                 <option value="dark_chocolate">Dark Chocolate</option>
-                <option value="black_coffee">Black Coffee</option>
-                <option value="white_coffee">White Coffee</option>
-                <option value="capuccino">Capuccino</option>
+                <option value="regular_coffee">Regular Coffee</option>
                 <option value="espresso">Espresso</option>
                 <option value="custom">Custom</option>
             </select>
             <input type = "number" name = "amount">
             <input type = "time" name = "time"><br>
-            <input type = "button" value = "submit"> 
+            <input type = "button" value = "submit">
         </table>
     </form>
 </body>
