@@ -7,14 +7,27 @@
 </head>
 <body>
     <form> 
-        Weight:  <br>
-        <input type="text" name = "weight"><br>
-        Item: <br>
-        <input type = "text" name = "item"><br>
-        Time: <br>
-        <input type = "text" name = "time"><br>
-        <input type = "button" value = "submit"> 
-
+        Weight: <br>
+        <input type="number" name = "weight"><br>
+        <table id="items">Items:<br>
+            <select>Item
+                <option value="empty"></option>
+                <option value="cola">Cola</option>
+                <option value="green_tea">Green Tea</option>
+                <option value="milk_chocolate">Milk Chocolate</option>
+                <option value="black_tea">Black Tea</option>
+                <option value="energy_drink">Energy Drink</option>
+                <option value="dark_chocolate">Dark Chocolate</option>
+                <option value="black_coffee">Black Coffee</option>
+                <option value="white_coffee">White Coffee</option>
+                <option value="capuccino">Capuccino</option>
+                <option value="espresso">Espresso</option>
+                <option value="custom">Custom</option>
+            </select>
+            <input type = "number" name = "amount">
+            <input type = "time" name = "time"><br>
+            <input type = "button" value = "submit"> 
+        </table>
     </form>
 </body>
 </html>
