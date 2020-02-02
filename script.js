@@ -65,7 +65,7 @@ function addRow(){
 	amt.setAttribute("name", "time");
 	row.appendChild(time);
 
-	var del = row.insertCell(-1)
+	var del = document.createElement("INPUT");
 	del.setAttribute("type", "button");
 	del.innerHTML = "delete";
 	row.appendChild(del);
@@ -79,12 +79,15 @@ function delItem(row){
 
 function calc(){
 	var rows = document.getElementById("items").rows;
+	var items = new Array();
+
 	for (const r of rows) {
-		item = new Item(r[0].value, r[1].value, r[2].value);
+		var cells = r.children;
+		var item = new Item(cells[0].value, cells[1].value, cells[2].value);
 		items.push(item);
 	}
 
-	var mgCaf = equation(document.getElementById("weight"), items, Date.now());
+	var mgCaf = equation(document.getElementById("weight").value, items, Date.now());
 	var out = document.getElementById("out");
 	out.innerHTML = "Your current caffeine level is approximately " + mgCaf + "mg/L.";
 }
@@ -95,8 +98,9 @@ function equation(weight, items, now){
 	var mgCaf = 0;
 
 	for (const i of items) {
-		t = now - i.time;
-		mgCaf = mgCaf + i.mgCaf * Math.pow(2, -4 * t);
+		var time = i.time;
+		var t = now - Date.parse(time);
+		mgCaf = mgCaf + parseFloat(i.mgCaf) * Math.pow(2, -4 * t);
 	}
 
 	return mgCaf / blood;
