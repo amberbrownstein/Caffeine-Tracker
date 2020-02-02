@@ -1,9 +1,3 @@
-Using Math.pow
-
-function init(){
-	document.getElementById("add_row").addEventListener("click", addRow, true);
-}
-
 class Item {
  	constructor(name, amt, time) {
  		this.name = name;
@@ -43,34 +37,62 @@ class Item {
   	}
 }
 
-function displayItems(){
-
-}
-
-function addItem(){
-
-}
-
 function addRow(){
-	var items = document.getElementById("items")
-	var row = items.insertRow();
+	var list = document.getElementById("items")
+	var row = list.insertRow();
 	row.classList.add("rows");
-	items.appendChild(row);
+	list.appendChild(row);
+
+	var items = document.createElement("SELECT");
+	row.appendChild(items);
+
+	var option = document.createElement("option");
+	var t = document.createTextNode("Soda");
+	option.appendChild(t);
+	items.add(option);
+
+	var amt = document.createElement("INPUT");
+	amt.setAttribute("type", "number");
+	amt.setAttribute("name", "amt");
+	row.appendChild(amt);
+
+	var time = document.createElement("INPUT");
+	time.setAttribute("type", "time");
+	amt.setAttribute("name", "time");
+	row.appendChild(time);
+
+	var del = row.insertCell(-1)
+	del.setAttribute("type", "button");
+	del.innerHTML = "delete";
+	row.appendChild(del);
+	del.addEventListener("click", function() { deleteItem(row); });
 }
 
-function delItem(){
-
+function delItem(row){
+	var i = row.parentNode.parentNode.rowIndex;
+ 	document.getElementById("items").deleteRow(i);
 }
 
-function calc(weight, items, now){
+function calc(){var rows = document.getElementById(items).rows;
+	for (const r of rows) {
+		item = new Item(r.name, r.amt, r.time);
+		items.push(item);
+	}
+
+	var mgCaf = equation(document.getElementById("weight"), items, Date.now());
+	var out = document.getElementById("out");
+	out.innerHTML = "Your current caffeine level is approximately " + mgCaf + "mg/L.";
+}
+
+function equation(weight, items, now){
 	var blood = .07 * weight;
 	blood = blood / 2.34;
 	var mgCaf = 0;
 
 	for (const i of items) {
-		t = now - i.time
-		mgCaf = mgCaf + i.mgCaf * Math.pow(2, -4 * t)
+		t = now - i.time;
+		mgCaf = mgCaf + i.mgCaf * Math.pow(2, -4 * t);
 	}
 
-	return mgCaf / blood
+	return mgCaf / blood;
 }

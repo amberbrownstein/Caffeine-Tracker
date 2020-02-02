@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>CoffeeMeter</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="script" type="text/javascript" href="script.js">
@@ -17,33 +18,15 @@
     <br>
     For espresso based drinks (lattes, capuccinos, etc.), enter 2 shots of espresso for a small, 3 for a large<br>
     <br>
-    Alternatively, if your caffeinated consumable is not listed as an option, but you know the amount of caffeine you consumed from it in mg, you can add it as a custom item.<br>
-    <br>
-    *Disclaimer: All calculations are approximate. Different levels of caffeine affect people differently, and certain brands may contain different caffeine levels than are used in our calculations.</p>
+    Alternatively, if your caffeinated consumable is not listed as an option, but you know the amount of caffeine you consumed from it in mg, you can add it as a custom item.</p>
     <form> 
         Weight (in lbs): <br>
-        <input type="number" name = "weight"><br>
-        <ul id="items">Items:<br>
-            <li>
-                <select>
-                    <option value="empty"></option>
-                    <option value="soda">Caffeinated Soda</option>
-                    <option value="green_tea">Green Tea</option>
-                    <option value="milk_chocolate">Milk Chocolate</option>
-                    <option value="black_tea">Black Tea</option>
-                    <option value="energy_drink">Energy Drink</option>
-                    <option value="dark_chocolate">Dark Chocolate</option>
-                    <option value="regular_coffee">Regular Coffee</option>
-                    <option value="espresso">Espresso</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <input type = "number" name = "amount">
-                <input type = "time" name = "time"> 
-                <input type = "button" name = "delete" value = "delete"><br>
-            </li>
-        </ul>
-            <input type = "button" name = "add_row" value = "add row"><br>
-            <input type = "submit" value = "submit">
+        <input type="number" id="weight"><br>
+        <table id="items">Items:<br></table>
+        <input type="button" onclick="addRow()" name="new item"><br>
+        <input type=button onclick="calc()" name="calculate">
     </form>
+    <p id="out"></p>
+    <p>*Disclaimer: All calculations are approximate. Different levels of caffeine affect people differently, and certain brands may contain different caffeine levels than are used in our calculations.</p>
 </body>
 </html>
