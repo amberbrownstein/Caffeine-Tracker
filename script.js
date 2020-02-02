@@ -5,31 +5,31 @@ class Item {
 		this.time = time;
 
 		switch(name) {
-			case soda:
+			case "Soda":
 				this.caf = 40
 				break;
-			case green_tea:
+			case "Green Tea":
 				this.caf = 28
 				break;
-			case milk_chocolate:
+			case "Milk Chocolate":
 				this.caf = 6
 				break;
-			case black_tea:
+			case "Black Tea":
 				this.caf = 47
 				break;
-			case energy_drink:
+			case "Energy Drink":
 				this.caf = 200
 				break;
-			case dark_chocolate:
+			case "Dark Chocolate":
 				this.caf = 23
 				break;
-			case regular_coffee:
+			case "Regular Coffee":
 				this.caf = 96
 				break;
-			case espresso:
+			case "Espresso":
 				this.caf = 40
 				break;
-			case custom:
+			case "Custom":
 				this.caf = amt;
 		} 
 
@@ -38,6 +38,8 @@ class Item {
 }
 
 function addRow(){
+	it = [" ", "Soda", "Green Tea","Milk Chocolate", "Black Tea", "Energy Drink", "Dark Chocolate", "Regular Coffee", "Espresso", "Custom"]
+
 	var list = document.getElementById("items")
 	var row = list.insertRow();
 	row.classList.add("rows");
@@ -46,10 +48,12 @@ function addRow(){
 	var items = document.createElement("SELECT");
 	row.appendChild(items);
 
-	var option = document.createElement("option");
-	var t = document.createTextNode("Soda");
-	option.appendChild(t);
-	items.add(option);
+	for(const i of it){
+		var option = document.createElement("option");
+		var t = document.createTextNode(i);
+		option.appendChild(t);
+		items.add(option);
+	}
 
 	var amt = document.createElement("INPUT");
 	amt.setAttribute("type", "number");
