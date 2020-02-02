@@ -7,6 +7,7 @@
     <link rel="script" type="text/javascript" href="script.js">
 </head>
 <body>
+    <script src="script.js"></script>
     <p id=intro>While normalized in society today, caffeine still remains a drug, and like any drug, may come with some serious side effects. This module helps you track your caffeine intake so you can figure out the optimal amount to consume without experiencing the adverse side effects of too much caffeine.<br>
     <br>
     For amount, enter how much of the appropriate unit you consumed at that time for that item:<br>
@@ -23,8 +24,8 @@
         Weight (in lbs): <br>
         <input type="number" id="weight"><br>
         <table id="items">Items:<br></table>
-        <input type="button" onclick="addRow()" name="new item"><br>
-        <input type=button onclick="calc()" name="calculate">
+        <input type="button" onclick="addRow()" value="new item" name="new item"><br>
+        <input type=button onclick="calc()" value="calculate" name="calculate">
     </form>
     <p id="out"></p>
     <p>*Disclaimer: All calculations are approximate. Different levels of caffeine affect people differently, and certain brands may contain different caffeine levels than are used in our calculations.</p>

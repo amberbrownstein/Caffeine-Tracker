@@ -65,7 +65,7 @@ function addRow(){
 	del.setAttribute("type", "button");
 	del.innerHTML = "delete";
 	row.appendChild(del);
-	del.addEventListener("click", function() { deleteItem(row); });
+	del.addEventListener("click", function() { delItem(row); });
 }
 
 function delItem(row){
@@ -73,9 +73,10 @@ function delItem(row){
  	document.getElementById("items").deleteRow(i);
 }
 
-function calc(){var rows = document.getElementById(items).rows;
+function calc(){
+	var rows = document.getElementById("items").rows;
 	for (const r of rows) {
-		item = new Item(r.name, r.amt, r.time);
+		item = new Item(r[0].value, r[1].value, r[2].value);
 		items.push(item);
 	}
 
