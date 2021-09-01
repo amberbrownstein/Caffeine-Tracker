@@ -30,7 +30,7 @@ class Item {
 				this.caf = 64
 				break;
 			case "Custom":
-				this.caf = amt;
+				this.caf = 1;
 		} 
 
 		this.mgCaf = amt * this.caf
