@@ -62,7 +62,7 @@ function addRow(){
 
 	var time = document.createElement("INPUT");
 	time.setAttribute("type", "time");
-	amt.setAttribute("name", "time");
+	time.setAttribute("name", "time");
 	row.appendChild(time);
 
 	var del = document.createElement("INPUT");
